@@ -1,7 +1,6 @@
 import datetime
 import random
 
-# Menu with item codes
 menu = {
     "C101": {"name": "Coffee", "price": 50},
     "T102": {"name": "Tea", "price": 30},
@@ -10,10 +9,8 @@ menu = {
     "P105": {"name": "Pastry", "price": 60}
 }
 
-# Cart to hold orders
 order = {}
 
-# Function to display menu
 def show_menu():
     print("\n" + "-"*40)
     print("{:^40}".format("CAFFE MENU"))
@@ -24,7 +21,6 @@ def show_menu():
         print(f"{code:<6} {item['name']:<15} ₹{item['price']:>10}")
     print("-"*40)
 
-# Take an order
 def take_order():
     show_menu()
     while True:
@@ -47,13 +43,11 @@ def take_order():
         else:
             print("❌ Invalid code. Please choose from the menu.")
 
-# Clear cart
 def clear_cart():
     global order
     order.clear()
     print("🧹 Cart cleared successfully.")
 
-# Generate a detailed bill
 def generate_bill(customer_name):
     if not order:
         print("🛒 Your cart is empty. No bill to generate.")
@@ -82,7 +76,6 @@ def generate_bill(customer_name):
     print("="*45)
     print("✅ Thank you for visiting our Caffe!\n")
 
-# Main program loop
 def main():
     print("="*45)
     print("{:^45}".format("WELCOME TO PYTHON CAFFE"))
@@ -113,5 +106,4 @@ def main():
         else:
             print("❌ Invalid choice. Please enter 1 to 5.")
 
-# Run the program
 main()
